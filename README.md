@@ -76,30 +76,30 @@ endif
 ## Колоды
 
 **Создание колоды**
-```go run cmd/client/main.go -addr=localhost:9000 createDeck "My Deck Title" "Description of my deck" "Author Name"```
+```go run cmd/client/main.go -addr=localhost:9000 createDeck <Deck titile> <Description of deck> <Author>```
 
 **Получение колоды по ID**
-```go run cmd/client/main.go -addr=localhost:9000 getDeckById 1```
+```go run cmd/client/main.go -addr=localhost:9000 getDeckById <Deck ID>```
 
 **Обновление колоды**
-```go run cmd/client/main.go -addr=localhost:9000 updateDeck 1 "Updated Title" "Updated Description" "Author Name"```
+```go run cmd/client/main.go -addr=localhost:9000 updateDeck <Deck ID> <Updated Title> <Updated Description> <Updated Author>```
 
 **Удаление колоды по ID**
-```go run cmd/client/main.go -addr=localhost:9000 deleteDeck 1```
+```go run cmd/client/main.go -addr=localhost:9000 deleteDeck <Deck ID>```
 
 ## Карты
 
 **Создание карты**
-```go run cmd/client/main.go -addr=localhost:9000 createCard  "Front card" "Back card" 2  "John Doe"```
+```go run cmd/client/main.go -addr=localhost:9000 createCard  <Front card> <Back card> <Deck ID> <Author>```
 
 **Получение карты по ID**
-```go run cmd/client/main.go -addr=localhost:9000 getCardById 3```
+```go run cmd/client/main.go -addr=localhost:9000 getCardById <Card ID>```
 
 **Обновление карты**
-```go run cmd/client/main.go -addr=localhost:9000 updateCard 6 "Updated Front card" "Updated Back card" 2 "John Doe"```
+```go run cmd/client/main.go -addr=localhost:9000 updateCard <Card ID> <Updated Front card> <Updated Back card> <Deck ID> <Updated Author>```
 
 **Удаление карты по ID**
-```go run cmd/client/main.go -addr=localhost:9000 deleteCard 6```
+```go run cmd/client/main.go -addr=localhost:9000 deleteCard <Card ID>```
 
 
 
