@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option go_package = "internal/app/grpc";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+package  grpc;
+
+service CardService {
+    rpc CreateCard(CreateCardRequest) returns (CardResponse) {
+        option (google.api.http) = {
+            post: "/v1/cards"
+            body: "*"
+        };
+    }
+    rpc GetCardById(GetCardByIdRequest) returns (CardResponse) {
+        option (google.api.http) = {
+            get: "/v1/cards/{id}"
+        };
+    }
+    rpc UpdateCard(UpdateCardRequest) returns (CardResponse) {
+        option (google.api.http) = {
+            put: "/v1/cards/{id}"
+            body: "*"
+        };
+    }
+    rpc DeleteCard(DeleteCardRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/cards/{id}"
+        };
+    }
+}
+
+message CreateCardRequest {
+    string front = 1;
+    string back = 2;
+    int64 deck_id = 3;
+    string author = 4;
+}
+  
+
+message GetCardByIdRequest {
+    int64 id = 1;
+}
+  
+message UpdateCardRequest {
+    int64 id = 1;
+    string front = 2;
+    string back = 3;
+    int64 deck_id = 4;
+    string author = 5;
+}
+  
+message DeleteCardRequest {
+    int64 id = 1;
+}
+  
+message CardResponse {
+    int64 id = 1;
+    string front = 2;
+    string back = 3;
+    int64 deck_id = 4;
+    string author = 5;
+    string created_at = 6;
+}
+
